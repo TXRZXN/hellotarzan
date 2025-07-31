@@ -28,7 +28,7 @@ To run the project locally:
 2.Remove existing node_modules and package-lock.json :
 
 ```bash
-    flutter --version
+    rm -rf node_modules package-lock.json
 ```
 
 3.Install dependencies:
