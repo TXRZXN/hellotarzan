@@ -80,7 +80,7 @@ export default function HeroWidget({
 
   return (
     <div className="flex flex-col justify-center items-center text-center space-y-6">
-      <div className="w-[300px] h-[300px] rounded-full overflow-hidden">
+      <div className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] rounded-full overflow-hidden">
         <Image
           src="/Me_Image.jpg"
           alt="Naruechat Buranasombat"
