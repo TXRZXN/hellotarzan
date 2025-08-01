@@ -61,7 +61,14 @@ export default function Projects() {
         "SQL Server",
         "Swagger",
       ],
-      images: [{ src: "/placeholder.svg", alt: "Example Image" }],
+      images: [
+        { src: "/portal/portal1.png", alt: "Example Image" },
+        { src: "/portal/portal2.png", alt: "Example Image" },
+        { src: "/portal/portal3.png", alt: "Example Image" },
+        { src: "/portal/portal4.png", alt: "Example Image" },
+        { src: "/portal/portal5.png", alt: "Example Image" },
+        { src: "/portal/portal7.png", alt: "Example Image" },
+      ],
     },
     {
       title: "Dog Lover",
@@ -86,7 +93,14 @@ export default function Projects() {
       description:
         "A personal portfolio application developed using Flutter as a self-practice project to showcase my programming works, skills, and contact information. This first version was built with responsive design principles, smooth UI animations, and modular code structure to prepare for future iterations and scalability.",
       technologies: ["Flutter", "Dart"],
-
+      images: [
+        { src: "/port/port1.png", alt: "Example Image" },
+        { src: "/port/port2.png", alt: "Example Image" },
+        { src: "/port/port3.png", alt: "Example Image" },
+        { src: "/port/port4.png", alt: "Example Image" },
+        { src: "/port/port5.png", alt: "Example Image" },
+        { src: "/port/port6.png", alt: "Example Image" },
+      ],
       githubUrl: "https://github.com/TXRZXN/Calculator_Kotlin",
     },
     {
