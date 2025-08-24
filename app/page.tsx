@@ -1,4 +1,5 @@
-import HeroWidget from "@/components/hero-widget"
+import HeroWidget from "@/components/hero-widget";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
           showSocialLinks={true}
           animationType="stagger" // เปลี่ยนได้เป็น "typewriter", "fadeIn", "gradient"
         />
+        {/* <h1 className="sr-only">Naruechat Buranasombat – Full Stack Developer & Trading Script Creator</h1> */}
       </div>
     </div>
-  )
+  );
 }

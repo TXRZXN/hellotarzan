@@ -1,29 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Skills", href: "/skills" },
-  { name: "Projects", href: "/projects" }, 
+  { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
-]
+];
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-end items-center h-16">
-         
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
@@ -31,7 +30,9 @@ export default function Navigation() {
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-white ${
-                  pathname === item.href ? "text-gray-900 dark:text-white" : "text-gray-600 dark:text-gray-300"
+                  pathname === item.href
+                    ? "text-gray-900 dark:text-white"
+                    : "text-gray-600 dark:text-gray-300"
                 }`}
               >
                 {item.name}
@@ -45,8 +46,17 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
-            <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)} className="w-9 h-9 p-0">
-              {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsOpen(!isOpen)}
+              className="w-9 h-9 p-0"
+            >
+              {isOpen ? (
+                <X className="h-4 w-4" />
+              ) : (
+                <Menu className="h-4 w-4" />
+              )}
             </Button>
           </div>
         </div>
@@ -74,5 +84,5 @@ export default function Navigation() {
         )}
       </div>
     </nav>
-  )
+  );
 }
