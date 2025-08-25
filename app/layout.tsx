@@ -12,17 +12,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hellotarzan.vercel.app"),
+  applicationName:"Hello Tarzan",
   title: {
-    default: "Naruechat Buranasombat | Portfolio",
-    template: "%s | Portfolio",
+    default: "Hello Tarzan - Naruechat Buranasombat | Portfolio",
+    template: "%s | Hello Tarzan",
   },
   description:
     "Web and Mobile Application Developer, specialized in Dart, C#, Next.js, React, and Tailwind, with experience in building trading indicators and strategies.",
   alternates: { canonical: "/" },
   openGraph: {
+    siteName: "Hello Tarzan",
     type: "profile",
     url: "https://hellotarzan.vercel.app",
-    title: "Naruechat Buranasombat | Portfolio",
+    title: "Hello Tarzan - Naruechat Buranasombat | Portfolio",
     description:
       "Web and Mobile Application Developer, specialized in Dart, C#, Next.js, React, and Tailwind, with experience in building trading indicators and strategies.",
     images: [
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
         url: "https://hellotarzan.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Portfolio of Naruechat Buranasombat",
+        alt: "Hello Tarzan - Naruechat Buranasombat | Portfolio",
       },
     ],
     locale: "en_US", // สอดคล้องภาษา
@@ -41,7 +43,6 @@ export const metadata: Metadata = {
     description:
       "Web and Mobile Application Developer, specialized in Dart, C#, Next.js, React, and Tailwind, with experience in building trading indicators and strategies.",
     images: ["https://hellotarzan.vercel.app/og-image.jpg"],
-
   },
   robots: { index: true, follow: true },
   authors: [
@@ -62,6 +63,7 @@ export const metadata: Metadata = {
     "Trading Strategy",
     "Web Developer",
     "Full Stack Developer",
+    "Hello Tarzan",
   ],
   other: {
     "profile:first_name": "Naruechat",
@@ -77,10 +79,11 @@ export default function RootLayout({
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Naruechat Buranasombat",
+    name: "Hello Tarzan",
     url: "https://hellotarzan.vercel.app",
     jobTitle: "Full-Stack Developer (Web & Mobile)",
     image: "https://hellotarzan.vercel.app/og-image.jpg", // แนะนำรูปโปรไฟล์จริง
+    alternateName: "Hello Tarzan",
     sameAs: [
       "https://github.com/TXRZXN",
       "https://www.linkedin.com/in/naruechat-buranasombat/",
@@ -103,7 +106,7 @@ export default function RootLayout({
     "@type": "WebSite",
     name: "Naruechat Buranasombat | Portfolio",
     url: "https://hellotarzan.vercel.app",
-    inLanguage: "en-US", 
+    inLanguage: "en-US",
   };
 
   return (
