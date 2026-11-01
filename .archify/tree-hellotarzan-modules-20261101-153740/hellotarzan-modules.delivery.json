@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "49efd6d5-0e21-439a-a32e-9280e336caac",
+  "status": "current",
+  "command": "deliver",
+  "type": "tree",
+  "input": "D:\\work\\hellotarzan\\.archify\\tree-hellotarzan-modules-20261101-153740\\candidate.json",
+  "output": "D:\\work\\hellotarzan\\.archify\\tree-hellotarzan-modules-20261101-153740\\hellotarzan-modules.html",
+  "specification": {
+    "sha256": "3d05e37daf3d66b93a0569171bf9bcfa98a09bcc020fd81683d3712f76eae497",
+    "bytes": 6035
+  },
+  "artifact": {
+    "sha256": "47382e2ccc6ce3a14562f8af6ca7132fbd4a9f2ca950b156dd54530be60fe337",
+    "bytes": 832773
+  }
+}

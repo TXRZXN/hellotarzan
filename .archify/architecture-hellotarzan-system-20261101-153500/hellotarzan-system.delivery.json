@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "004e7888-6fb6-410e-a845-db811a016793",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "D:\\work\\hellotarzan\\.archify\\architecture-hellotarzan-system-20261101-153500\\candidate.json",
+  "output": "D:\\work\\hellotarzan\\.archify\\architecture-hellotarzan-system-20261101-153500\\hellotarzan-system.html",
+  "specification": {
+    "sha256": "591aa2ca8c87370af75ad788788e5665e7dddc581b01aeed7e2dc7ca56a7a506",
+    "bytes": 8151
+  },
+  "artifact": {
+    "sha256": "5a25585d89f783f6c349f09cf8687205eefb95f41ec07242018fd3506fda2a7d",
+    "bytes": 830474
+  }
+}

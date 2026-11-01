@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Hello Tarzan Portfolio — System Architecture",
+    "locale": "en",
+    "output": ".archify/architecture-hellotarzan-system-20261101-153500/hellotarzan-system.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/TXRZXN/hellotarzan.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "74c881203adefa8819c19ce1f9572d562e60331f"
+    },
+    "views": [
+      {
+        "id": "portfolio_journey",
+        "label": "Portfolio Showcase Path",
+        "focus": ["visitor", "app_router", "shared_shell", "feature_pages", "feature_data"],
+        "note": "Server and client rendering flow for Home, About, Skills, and filterable Projects pages."
+      },
+      {
+        "id": "contact_pipeline",
+        "label": "Contact & SMTP Pipeline",
+        "focus": ["visitor", "app_router", "contact_widget", "email_api", "security_guard", "zoho_smtp"],
+        "note": "End-to-end contact submission with rate limiting, honeypot trap, validation, and Zoho SMTP delivery."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "visitor",
+      "type": "external",
+      "label": "Visitor & Crawlers",
+      "sublabel": "Browser / SEO Bots",
+      "pos": [40, 200],
+      "size": [140, 64],
+      "sources": [
+        { "path": "src/app/robots.ts", "line": 3, "end_line": 11, "label": "robots.txt" },
+        { "path": "src/app/sitemap.ts", "line": 3, "end_line": 36, "label": "sitemap.xml" }
+      ]
+    },
+    {
+      "id": "shared_shell",
+      "type": "frontend",
+      "label": "Shared App Shell",
+      "sublabel": "Nav, Theme & Toast",
+      "pos": [270, 40],
+      "size": [160, 64],
+      "sources": [
+        { "path": "src/shared/components/navigation.tsx", "line": 18, "end_line": 89, "label": "Navigation" },
+        { "path": "src/shared/components/theme-provider.tsx", "line": 7, "end_line": 9, "label": "ThemeProvider" },
+        { "path": "src/shared/components/ui/toast.tsx", "line": 15, "end_line": 63, "label": "Toast" }
+      ]
+    },
+    {
+      "id": "app_router",
+      "type": "frontend",
+      "label": "Next.js App Router",
+      "sublabel": "RootLayout & Routes",
+      "pos": [270, 200],
+      "size": [160, 64],
+      "sources": [
+        { "path": "src/app/layout.tsx", "line": 74, "end_line": 139, "label": "RootLayout & JSON-LD" },
+        { "path": "src/app/page.tsx", "line": 3, "end_line": 5, "label": "Home entry" },
+        { "path": "src/app/not-found.tsx", "line": 5, "end_line": 36, "label": "Custom 404" }
+      ]
+    },
+    {
+      "id": "feature_pages",
+      "type": "frontend",
+      "label": "Feature Showcase",
+      "sublabel": "Hero, Projects, Skills",
+      "pos": [270, 360],
+      "size": [160, 64],
+      "sources": [
+        { "path": "src/features/home/components/hero-widget.tsx", "line": 20, "end_line": 199, "label": "HeroWidget" },
+        { "path": "src/features/projects/pages/projects-page.tsx", "line": 11, "end_line": 54, "label": "ProjectsPage" },
+        { "path": "src/features/skills/components/skills-widget.tsx", "line": 11, "end_line": 93, "label": "SkillsWidget" }
+      ]
+    },
+    {
+      "id": "feature_data",
+      "type": "database",
+      "label": "Typed Data Layer",
+      "sublabel": "Projects, Skills, Bio",
+      "pos": [540, 360],
+      "size": [160, 64],
+      "sources": [
+        { "path": "src/features/projects/data/projects.data.ts", "line": 3, "end_line": 158, "label": "projectsData" },
+        { "path": "src/features/skills/data/skills.data.ts", "line": 3, "end_line": 48, "label": "skillsData" },
+        { "path": "src/features/about/data/about.data.ts", "line": 3, "end_line": 60, "label": "aboutData" }
+      ]
+    },
+    {
+      "id": "contact_widget",
+      "type": "frontend",
+      "label": "Contact Form UI",
+      "sublabel": "useContactForm Hook",
+      "pos": [540, 200],
+      "size": [160, 64],
+      "sources": [
+        { "path": "src/features/contact/components/contact-form-widget.tsx", "line": 18, "end_line": 140, "label": "ContactFormWidget" },
+        { "path": "src/features/contact/hooks/use-contact-form.ts", "line": 14, "end_line": 89, "label": "useContactForm" },
+        { "path": "src/features/contact/data/contact.data.ts", "line": 3, "end_line": 7, "label": "contactInfoData" }
+      ]
+    },
+    {
+      "id": "security_guard",
+      "type": "security",
+      "label": "Rate Limit & Guard",
+      "sublabel": "3 req/10m + Honeypot",
+      "pos": [810, 40],
+      "size": [160, 64],
+      "sources": [
+        { "path": "src/app/api/send-email/route.ts", "line": 10, "end_line": 29, "label": "isRateLimited" },
+        { "path": "src/app/api/send-email/route.ts", "line": 53, "end_line": 86, "label": "Honeypot & validation" }
+      ]
+    },
+    {
+      "id": "email_api",
+      "type": "backend",
+      "label": "Send Email API",
+      "sublabel": "POST /api/send-email",
+      "pos": [810, 200],
+      "size": [160, 64],
+      "sources": [
+        { "path": "src/app/api/send-email/route.ts", "line": 34, "end_line": 115, "label": "POST route handler" }
+      ]
+    },
+    {
+      "id": "zoho_smtp",
+      "type": "cloud",
+      "label": "Zoho Mail SMTP",
+      "sublabel": "smtp.zoho.com :465",
+      "pos": [1070, 200],
+      "size": [150, 64],
+      "sources": [
+        { "path": "src/app/api/send-email/route.ts", "line": 89, "end_line": 107, "label": "Nodemailer transport" },
+        { "path": ".env.example", "line": 6, "end_line": 9, "label": "SMTP credentials" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Next.js 15 Application Runtime (Feature-Sliced Architecture)",
+      "wraps": [
+        "shared_shell",
+        "app_router",
+        "feature_pages",
+        "feature_data",
+        "contact_widget",
+        "security_guard",
+        "email_api"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "visit_routes",
+      "from": "visitor",
+      "to": "app_router",
+      "label": "HTTPS GET",
+      "variant": "emphasis"
+    },
+    {
+      "id": "router_shell",
+      "from": "app_router",
+      "to": "shared_shell",
+      "label": "wraps UI"
+    },
+    {
+      "id": "router_features",
+      "from": "app_router",
+      "to": "feature_pages",
+      "label": "delegates"
+    },
+    {
+      "id": "features_data",
+      "from": "feature_pages",
+      "to": "feature_data",
+      "label": "reads data"
+    },
+    {
+      "id": "router_contact",
+      "from": "app_router",
+      "to": "contact_widget",
+      "label": "/contact"
+    },
+    {
+      "id": "contact_post",
+      "from": "contact_widget",
+      "to": "email_api",
+      "label": "POST JSON",
+      "variant": "emphasis"
+    },
+    {
+      "id": "api_security",
+      "from": "email_api",
+      "to": "security_guard",
+      "label": "validates",
+      "variant": "security"
+    },
+    {
+      "id": "api_smtp",
+      "from": "email_api",
+      "to": "zoho_smtp",
+      "label": "TLS :465",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Thin Routing & SEO Layer",
+      "items": [
+        "src/app/ handles metadata, JSON-LD (Person & WebSite), robots.txt, and sitemap.xml",
+        "Route entries delegate presentation directly to src/features/*/pages/*-page.tsx",
+        "Shared App Shell provides persistent Navigation, next-themes dark mode, and Toast alerts"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Feature-Sliced Modules",
+      "items": [
+        "5 isolated domain slices: home, about, projects, skills, and contact",
+        "Static typed repositories in data/*.data.ts decouple content from UI widgets",
+        "Interactive category filtering (All, Trading, Web, Mobile, Other) and image carousels"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Hardened Contact API",
+      "items": [
+        "In-memory IP rate limiter restricts submissions to 3 requests per 10-minute window",
+        "Hidden honeypot input silently neutralizes automated bot submissions",
+        "Strict regex & length validation before dispatching via Zoho Mail SMTP (port 465)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "4c09acc9-4dff-477f-a9fe-13378976a0e6",
+  "status": "current",
+  "command": "deliver",
+  "type": "sequence",
+  "input": "D:\\work\\hellotarzan\\.archify\\sequence-contact-email-flow-20261101-153630\\candidate.json",
+  "output": "D:\\work\\hellotarzan\\.archify\\sequence-contact-email-flow-20261101-153630\\contact-email-flow.html",
+  "specification": {
+    "sha256": "d49121e268f5350d4f668dfb7b09d6ba97fa921ac9b0ffa33e771c9d248e8721",
+    "bytes": 5960
+  },
+  "artifact": {
+    "sha256": "0911dba4954f757552255ec1bf4457264b0409940a5f0487fb191a537a7c29dc",
+    "bytes": 818533
+  }
+}
